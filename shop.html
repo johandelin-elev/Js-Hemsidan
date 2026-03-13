@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Allt I Rosor</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="loading-screen" id="loading-screen">
+        <div class="loader" id="loader"></div>
+        <div class="load-bar" id="load-bar">
+            <div class="load-bar-progress"></div>
+        </div>
+    </div>
+    <div class="checkoutWindow" id="checkoutWindow">
+        <div class="checkout-panel">
+            <div class="form-container checkout-container">
+                <form class="checkout-form">
+                    <div class="checkout-form-container">
+                        <input type="text" id="form-name-input" placeholder="Name" required>
+                        <div class="user-contact-container">
+                            <input type="email" id="form-email-input" placeholder="Email" required>
+                            <input type="tel" id="form-tel-input" placeholder="+46" pattern="[0-9]{10}" required>
+                        </div>
+                        <div class="location-container">
+                            <select class="country-select" required>
+                                <option class="country">🇸🇪 Sweden</option>
+                                <option class="country">🇺🇸 United States</option>
+                                <option class="country">🇬🇧 United Kingdom</option>
+                                <option class="country">🇨🇦 Canada</option>
+                                <option class="country">🇩🇪 Germany</option>
+                                <option class="country">🇫🇷 France</option>
+                                <option class="country">🇦🇺 Australia</option>
+                                <option class="country">🇳🇱 Netherlands</option>
+                                <option class="country">🇮🇳 India</option>
+                                <option class="country">🇯🇵 Japan</option>
+                                <option class="country">🇧🇷 Brazil</option>
+                            </select>
+                        </div>
+                        <div class="city-code-container">
+                            <input type="text" id="form-city-input" placeholder="Karlstad" pattern="[A-Z]" required>
+                            <input type="text" id="form-postcode-input" placeholder="000 000" required>
+                        </div>
+                    </div>
+                    <div class="payment-container">
+                        <button class="credit-card-btn"></button>
+                        <button class="currency-btn"></button>
+                    </div>
+                    <input type="submit" id="make-payment" required>
+                </form>
+            </div>
+
+            <div class="product-container checkout-container">
+                <div class="checkout-info-container">
+                    <h3 class="product-text">Inte Färdigt..</h3>
+                    <p class="total-amount">Total Amount</p>
+                    <h1 class="total-amount-title">$50.00</h1>
+                </div>
+                <div class="order-summary-container"></div>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <nav>
+            <p class="nav-title">ALLT I ROSOR</p>
+            <div class="navigations">
+                <a href="index.html" class="nav nav-home" id="home">Home</a>
+                <a href="shop.html" class="nav nav-shop active" id="shop">Shop</a>
+                <a href="gift.html" class="nav nav-gift" id="gift">Gift</a>
+                <a href="about.html" class="nav nav-about" id="about">About</a>
+            </div>
+            <svg id="checkout" class="nav-cart" xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="none" class="">
+                <g clip-path="url(#clip0_15_35)">
+                <rect width="24" height="24" fill="transparent"/>
+                <path d="M5.33331 6H19.8672C20.4687 6 20.9341 6.52718 20.8595 7.12403L20.1095 13.124C20.0469 13.6245 19.6215 14 19.1172 14H16.5555H9.44442H7.99998" stroke="currentColor" stroke-linejoin="round"/>
+                <path d="M2 4H4.23362C4.68578 4 5.08169 4.30341 5.19924 4.74003L8.30076 16.26C8.41831 16.6966 8.81422 17 9.26638 17H19" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="10" cy="20" r="1" stroke="currentColor" stroke-linejoin="round"/>
+                <circle cx="17.5" cy="20" r="1" stroke="currentColor" stroke-linejoin="round"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_15_35">
+                <rect width="24" height="24" fill="transparent"/>
+                </clipPath>
+                </defs>
+            </svg>
+            <div class="nav-account-container" id="account-container">
+                <button class="nav-account" id="account-button">Account</button>
+                <div class="account-dropdown" id="account-dropdown">
+                    <li class="dropdown-list" id="dropdown-list">
+                        <ol class="dropdown-list-item">Profile</ol>
+                        <ol class="dropdown-list-item">Gifts</ol>
+                        <ol class="dropdown-list-item">Settings</ol>
+                        <ol class="dropdown-list-item">Dashboard</ol>
+                        <ol class="dropdown-list-item">Log Out</ol>
+                    </li>
+                </div>
+            </div> 
+        </nav>
+
+
+        <div class="shop-top-container main-container">
+            <div class="shop-header-container header-container">
+                <h1 class="shop-header-title">Shop Roses</h1>
+                <p class="shop-header-undertitle">Fresh, Hand-Picked Flowers</p>
+            </div>
+        </div>
+
+        <div class="shop-middle-container main-container">
+            <div class="shop-search-container">
+                <div class="shop-controls">
+                    <select class="shop-filter">
+                        <option value="" disabled selected hidden>Filter</option>
+                        <option value="best">Best sellers</option>
+                        <option value="price">Price</option>
+                        <option value="latest">Latest products</option>
+                    </select>
+                    <select class="shop-sort">
+                        <option value="" disabled selected hidden>Sort by</option>
+                        <option value="high-low">High</option>
+                        <option value="low-high">Low</option>
+                    </select>
+                </div>
+                <input type="text" class="search-bar" placeholder="Search For Roses">
+            </div>
+            <div class="product-grid">
+                <div class="product">
+                    <img src="rose images/Rose 1.png">
+                    <div class="product-info">
+                        <div class="left-product-info-column product-info-column"></div>
+                        <div class="right-product-info-column product-info-column">
+                            <button class="addProduct buy-product-button">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="rose images/Rose 2.png">
+                    <div class="product-info">
+                        <div class="left-product-info-column product-info-column"></div>
+                        <div class="right-product-info-column product-info-column">
+                            <button class="addProduct buy-product-button">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="rose images/Rose 3.png">
+                    <div class="product-info">
+                        <div class="left-product-info-column product-info-column"></div>
+                        <div class="right-product-info-column product-info-column">
+                            <button class="addProduct buy-product-button">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="rose images/Rose 4.png">
+                    <div class="product-info">
+                        <div class="left-product-info-column product-info-column"></div>
+                        <div class="right-product-info-column product-info-column">
+                            <button class="addProduct buy-product-button">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="rose images/Rose 5.png">
+                    <div class="product-info">
+                        <div class="left-product-info-column product-info-column"></div>
+                        <div class="right-product-info-column product-info-column">
+                            <button class="addProduct buy-product-button">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="rose images/Rose 6.png">
+                    <div class="product-info">
+                        <div class="left-product-info-column product-info-column"></div>
+                        <div class="right-product-info-column product-info-column">
+                            <button class="addProduct buy-product-button">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="rose images/Rose 7.png">
+                    <div class="product-info">
+                        <div class="left-product-info-column product-info-column"></div>
+                        <div class="right-product-info-column product-info-column">
+                            <button class="addProduct buy-product-button">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="rose images/Rose 8.png">
+                    <div class="product-info">
+                        <div class="left-product-info-column product-info-column"></div>
+                        <div class="right-product-info-column product-info-column">
+                            <button class="addProduct buy-product-button">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="rose images/Rose 9.png">
+                    <div class="product-info">
+                        <div class="left-product-info-column product-info-column"></div>
+                        <div class="right-product-info-column product-info-column">
+                            <button class="addProduct buy-product-button">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="rose images/Rose 10.png">
+                    <div class="product-info">
+                        <div class="left-product-info-column product-info-column"></div>
+                        <div class="right-product-info-column product-info-column">
+                            <button class="addProduct buy-product-button">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="rose images/Rose 11.png">
+                    <div class="product-info">
+                        <div class="left-product-info-column product-info-column"></div>
+                        <div class="right-product-info-column product-info-column">
+                            <button class="addProduct buy-product-button">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="rose images/Rose 12.png">
+                    <div class="product-info">
+                        <div class="left-product-info-column product-info-column"></div>
+                        <div class="right-product-info-column product-info-column">
+                            <button class="addProduct buy-product-button">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="shop-bottom-container main-container"></div>
+
+        <footer></footer>
+        
+    </main>
+
+    <div class="debug-ui" id="debug-ui">
+        <div class="debug-info-container">
+            <div class="debug-nav-container debug-title-container">
+                <p class="debug-window-title">Debug</p>
+            </div>
+            <div class="debug-nav-container debug-mouse-info">
+                <p class="mouse-pos-x mouse-info" id="debug-mouse-x">X: </p>
+                <p class="mouse-pos-y mouse-info" id="debug-mouse-y">Y: </p>
+            </div>
+        </div>
+        <div class="debug-nav" id="debug-nav">
+            <button class="clear-data debug-nav-button" id="website-data-btn">Clear Data</button>
+            <button class="debug-button debug-nav-button" id="debug-button">Debug</button>
+            <button class="debug-loading-off debug-nav-button" id="debug-loading">Loader</button>
+            <button class="debug-log debug-nav-button" id="debug-log">Log</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

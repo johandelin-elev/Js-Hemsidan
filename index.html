@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Allt I Rosor</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="loading-screen" id="loading-screen">
+        <div class="loader" id="loader"></div>
+        <div class="load-bar" id="load-bar">
+            <div class="load-bar-progress"></div>
+        </div>
+    </div>
+    <div class="checkoutWindow" id="checkoutWindow">
+        <div class="checkout-panel">
+            <div class="form-container checkout-container">
+                <form class="checkout-form">
+                    <div class="checkout-form-container">
+                        <input type="text" id="form-name-input" placeholder="Name" required>
+                        <div class="user-contact-container">
+                            <input type="email" id="form-email-input" placeholder="Email" required>
+                            <input type="tel" id="form-tel-input" placeholder="+46" pattern="[0-9]{10}" required>
+                        </div>
+                        <div class="location-container">
+                            <select class="country-select" required>
+                                <option class="country">🇸🇪 Sweden</option>
+                                <option class="country">🇺🇸 United States</option>
+                                <option class="country">🇬🇧 United Kingdom</option>
+                                <option class="country">🇨🇦 Canada</option>
+                                <option class="country">🇩🇪 Germany</option>
+                                <option class="country">🇫🇷 France</option>
+                                <option class="country">🇦🇺 Australia</option>
+                                <option class="country">🇳🇱 Netherlands</option>
+                                <option class="country">🇮🇳 India</option>
+                                <option class="country">🇯🇵 Japan</option>
+                                <option class="country">🇧🇷 Brazil</option>
+                            </select>
+                        </div>
+                        <div class="city-code-container">
+                            <input type="text" id="form-city-input" placeholder="Karlstad" pattern="[A-Z]" required>
+                            <input type="text" id="form-postcode-input" placeholder="000 000" required>
+                        </div>
+                    </div>
+                    <div class="payment-container">
+                        <button class="credit-card-btn"></button>
+                        <button class="currency-btn"></button>
+                    </div>
+                    <input type="submit" id="make-payment" required>
+                </form>
+            </div>
+
+            <div class="product-container checkout-container">
+                <div class="checkout-info-container">
+                    <h3 class="product-text">Inte Färdigt..</h3>
+                    <p class="total-amount">Total Amount</p>
+                    <h1 class="total-amount-title">$50.00</h1>
+                </div>
+                <div class="order-summary-container"></div>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <nav>
+            <p class="nav-title">ALLT I ROSOR</p>
+            <button class="new-changes-nav-button" id="new-changes-button">New Changes</button>
+            <div class="navigations">
+                <a href="index.html" class="nav nav-home active" id="home">Home</a>
+                <a href="shop.html" class="nav nav-shop" id="shop">Shop</a>
+                <a href="gift.html" class="nav nav-gift" id="gift">Gift</a>
+                <a href="about.html" class="nav nav-about" id="about">About</a>
+            </div>
+            <svg id="checkout" class="nav-cart" xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="none" class="">
+                <g clip-path="url(#clip0_15_35)">
+                <rect width="24" height="24" fill="transparent"/>
+                <path d="M5.33331 6H19.8672C20.4687 6 20.9341 6.52718 20.8595 7.12403L20.1095 13.124C20.0469 13.6245 19.6215 14 19.1172 14H16.5555H9.44442H7.99998" stroke="currentColor" stroke-linejoin="round"/>
+                <path d="M2 4H4.23362C4.68578 4 5.08169 4.30341 5.19924 4.74003L8.30076 16.26C8.41831 16.6966 8.81422 17 9.26638 17H19" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="10" cy="20" r="1" stroke="currentColor" stroke-linejoin="round"/>
+                <circle cx="17.5" cy="20" r="1" stroke="currentColor" stroke-linejoin="round"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_15_35">
+                <rect width="24" height="24" fill="transparent"/>
+                </clipPath>
+                </defs>
+            </svg>
+            <div class="nav-account-container" id="account-container">
+                <button class="nav-account" id="account-button">Account</button>
+                <div class="account-dropdown" id="account-dropdown">
+                    <li class="dropdown-list" id="dropdown-list">
+                        <ol class="dropdown-list-item">Profile</ol>
+                        <ol class="dropdown-list-item">Gifts</ol>
+                        <ol class="dropdown-list-item">Settings</ol>
+                        <ol class="dropdown-list-item">Dashboard</ol>
+                        <ol class="dropdown-list-item">Log Out</ol>
+                    </li>
+                </div>
+            </div> 
+        </nav>
+
+        <div class="home-top-container main-container">
+            <div class="home-header-container header-container">
+                <h1 class="home-header-title">Elegant roses for every moment</h1>
+                <p class="home-header-undertitle">Hand Picked Straight From Our Garden</p>
+            </div>
+        </div>
+        <div class="home-middle-container main-container">
+            <div class="action-container">
+                <button class="shop-quick-button quick-button">
+                    <a class="shop-quick-link quick-link" href="shop.html">Shop</a>
+                    <svg class="shop-quick-icon" xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24" fill="none">
+                        <path d="M4 12H20M20 12L16 8M20 12L16 16" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <button class="gift-quick-button quick-button">
+                    <a class="gift-quick-link quick-link" href="gift.html">Gift</a>
+                    <svg class="gift-quick-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.0" id="Layer_1" width="14px" height="14px" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
+                        <g>
+                            <path fill="#231F20" d="M4,60c0,2.211,1.789,4,4,4h20V36H4V60z"/>
+                            <path fill="#231F20" d="M36,64h20c2.211,0,4-1.789,4-4V36H36V64z"/>
+                            <path fill="#231F20" d="M60,12h-8c0-6.629-5.371-12-12-12c-3.086,0-5.875,1.199-8,3.113C29.875,1.199,27.086,0,24,0   c-6.629,0-12,5.371-12,12H4c-2.211,0-4,1.789-4,4v8c0,2.211,1.789,4,4,4h24V12h-8c0-2.211,1.789-4,4-4s4,1.789,4,4h8   c0-2.211,1.789-4,4-4s4,1.789,4,4h-8v16h24c2.211,0,4-1.789,4-4v-8C64,13.789,62.211,12,60,12z"/>
+                        </g>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="home-bottom-container main-container">
+            <div class="new-changes-container" id="new-changes-container">
+                <h1 class="new-changes-title">New Changes</h1>
+                <a href="about.html">
+                    <h3 class="changes">- Fixed Looping Gift Occasion Offset</h3>
+                </a>
+                <a href="about.html">
+                    <h3 class="changes">- Checkout Cart Opens The Checkout  "same ↓"</h3>
+                </a>
+                <a href="about.html">
+                    <h3 class="changes">- Account Opens Sidebar "click outside or esc"</h3>
+                </a>
+                <a href="about.html">
+                    <h3 class="changes">- Added "Add To Cart" Button In Shop "(Ingen js)"</h3>
+                </a>
+                <a href="about.html">
+                    <h3 class="changes">- Loading Screen</h3>
+                </a>
+                <a href="about.html">
+                    <h3 class="changes">- Debug Window "Letråd D,E,B,U,G (Kolla koden annars)"</h3>
+                </a>
+            </div>
+        </div>
+        
+        <footer></footer>
+
+    </main>
+
+    <div class="debug-ui" id="debug-ui">
+        <div class="debug-info-container">
+            <div class="debug-nav-container debug-title-container">
+                <p class="debug-window-title">Debug</p>
+            </div>
+            <div class="debug-nav-container debug-mouse-info">
+                <p class="mouse-pos-x mouse-info" id="debug-mouse-x">X: </p>
+                <p class="mouse-pos-y mouse-info" id="debug-mouse-y">Y: </p>
+            </div>
+        </div>
+        <div class="debug-nav" id="debug-nav">
+            <button class="clear-data debug-nav-button" id="website-data-btn">Clear Data</button>
+            <button class="debug-button debug-nav-button" id="debug-button">Debug</button>
+            <button class="debug-loading-off debug-nav-button" id="debug-loading">Loader</button>
+            <button class="debug-log debug-nav-button" id="debug-log">Log</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+
+</html>
