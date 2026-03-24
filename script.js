@@ -19,8 +19,6 @@ const DebugSequence = ["D", "E", "B", "U", "G", "Enter"];
 const DebugX = document.getElementById("debug-mouse-x");
 const DebugY = document.getElementById("debug-mouse-y");
 
-const DebugButtons = document.querySelectorAll(".debug-nav-button");
-
 //HTML
 const HtmlElement = document.querySelector("html");
 
