@@ -13,34 +13,16 @@ console.log("js Loaded");
 
 //Debug
 const DebugUI = document.getElementById("debug-ui");
-const DebugNav = document.getElementById("debug-nav");
 const DebugSequence = ["D", "E", "B", "U", "G", "Enter"];
 
 //Debug Mouse
 const DebugX = document.getElementById("debug-mouse-x");
 const DebugY = document.getElementById("debug-mouse-y");
 
-//Debug Buttons
-const DebugData = document.getElementById("website-data-btn");
-const DebugDebug = document.getElementById("debug-button");
-const DebugLoading = document.getElementById("debug-loading");
-const DebugLog = document.getElementById("debug-log");
-
 const DebugButtons = document.querySelectorAll(".debug-nav-button");
-
-//Nav
-const Nav = document.querySelector(".nav");
-
-//Loader
-const LoaderWindow = document.getElementById("loading-screen");
-const Loader = document.getElementById("loader");
-const LoadBar = document.getElementById("load-bar");
 
 //HTML
 const HtmlElement = document.querySelector("html");
-
-//Main
-const Main = document.querySelector("main");
 
 // Cart
 const Cart = document.getElementById("checkout");
@@ -104,33 +86,6 @@ let keyInputSequence = [];
 
 
 /* FUNCTIONS */
-
-//HOME PAGE LOAD
-window.onload = function pageLoad() {
-    if(LoaderWindow.style.display !== "flex" && sessionStorage.getItem("loaded") !== true) {
-        LoaderWindow.style.display = "flex";
-
-        if(sessionStorage.getItem("loaded")) {
-            LoaderWindow.style.display = "none";
-            return;
-        }
-
-        setTimeout(() => {
-            Loader.style.opacity = "0";
-            LoadBar.style.opacity = "0";
-    
-            setTimeout(() => {
-                LoaderWindow.style.opacity = "0";
-                
-                setTimeout(() => {
-                    LoaderWindow.style.display = "none";
-                    
-                    sessionStorage.setItem("loaded", "true");
-                }, 500);
-            }, 500);
-        }, 4000);
-    }
-}
 
 
 // Handle KEYS and Different ELEMENTS
